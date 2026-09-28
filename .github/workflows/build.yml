@@ -66,7 +66,7 @@ jobs:
           }
           EOF
 
-          # 4. AndroidManifest.xml
+          # 4. AndroidManifest.xml (TEMA NORMAL BIASA AGAR JAM & SINYAL MUNCUL)
           cat << 'EOF' > app/src/main/AndroidManifest.xml
           <?xml version="1.0" encoding="utf-8"?>
           <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -76,7 +76,7 @@ jobs:
               <application
                   android:label="PagesHub"
                   android:supportsRtl="true"
-                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+                  android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar">
                   <activity
                       android:name=".MainActivity"
                       android:exported="true"

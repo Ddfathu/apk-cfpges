@@ -1,12 +1,12 @@
 package com.pageshub.app;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     private WebView myWebView;
 
     @Override
@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
         settings.setDatabaseEnabled(true);
-        settings.setCacheMode(WebSettings.LOAD_DEFAULT);
 
         myWebView.setWebViewClient(new WebViewClient());
         myWebView.loadUrl("https://cfpagenodeloc.pages.dev/");
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (myWebView.canGoBack()) {
+        if (myWebView != null && myWebView.canGoBack()) {
             myWebView.goBack();
         } else {
             super.onBackPressed();
